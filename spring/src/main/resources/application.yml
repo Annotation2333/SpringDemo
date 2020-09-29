@@ -1,23 +1,29 @@
-#端口号配置
+
 server:
   port: 8083
+  tomcat:
+    uri-encoding: UTF-8
 spring:
-  #数据库基本信息
   datasource:
-    url: jdbc:mysql://127.0.0.1/0928?rewriteBatchedStatements=true&useServerPrepStmts=false&useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true
+    url: jdbc:mysql://localhost/0928?rewriteBatchedStatements=true&useServerPrepStmts=false&useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true
     username: root
     password: root
-  #liquibase配置
+
   liquibase:
   enabled: true
   change-log: classpath:liquibase/master.xml
-  #JPA数据源配置
+
   jpa:
     hibernate:
       ddl-auto: update
     database-platform: org.hibernate.dialect.MySQLDialect
     show-sql: true
-#分页查询
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
 pagehelper:
   helperDialect: mysql
   reasonable: true
