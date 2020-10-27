@@ -2,7 +2,6 @@ package com.example.spring.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -15,14 +14,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SwaggerConfig {
     @Bean(value = "defaultApi2")
-    public Docket defaultApi2() {
+
+    public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
-                //分组名称
-                .groupName("2.X版本")
                 .select()
-//                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
-                //这里指定Controller扫描包路径
                 .apis(RequestHandlerSelectors.basePackage("com.example.spring.web.rest"))
                 .paths(PathSelectors.any())
                 .build();
@@ -30,10 +26,11 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("Spring演示-后台API列表")
-                .description("服务相关接口")
-                //.termsOfServiceUrl("http://www.xx.com/")
-                .version("1.0")
+                .title("SpringBoot项目 后台服务API接口文档")
+                .description("使用 knife4j 搭建的后台服务API接口文档")
+                .termsOfServiceUrl("http://localhost:8080/")
+                .contact("lizhou")
+                .version("1.0.0")
                 .build();
     }
 }

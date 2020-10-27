@@ -50,4 +50,8 @@ public final class Constants {
 
     public static final Integer DEL_FLAG_DELETED = 1;
 
+    public static final String UTF8_ENCODING = "UTF-8";
+
+
+
 }
