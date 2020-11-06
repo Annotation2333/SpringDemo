@@ -26,7 +26,7 @@ public class EmployeeCreateVM {
     @ApiModelProperty(value = "工资")
     private BigDecimal salary;
 
-    public Employee toEmployee() {
+    public Employee vmToDaoDomain() {
         return Employee.builder().id(id).name(name).age(age).sex(sex).salary(salary.longValue()).build();
     }
 

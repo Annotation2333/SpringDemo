@@ -59,6 +59,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		<!-- 引入阿里fastjson -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
@@ -91,11 +92,29 @@
 			<artifactId>commons-lang3</artifactId>
 			<version>3.8.1</version>
 		</dependency>
+		<!-- 引入阿里easyExcel框架依赖 -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>easyexcel</artifactId>
 			<version>2.1.6</version>
 		</dependency>
+
+		<!-- 引入定时任务Quartz框架依赖 -->
+		<dependency>
+			<groupId>org.quartz-scheduler</groupId>
+			<artifactId>quartz</artifactId>
+			<version>2.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.quartz-scheduler</groupId>
+			<artifactId>quartz-jobs</artifactId>
+			<version>2.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>

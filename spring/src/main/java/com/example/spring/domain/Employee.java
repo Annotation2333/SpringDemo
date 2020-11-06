@@ -14,8 +14,9 @@ import java.io.Serializable;
 @Builder
 public class Employee implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
     @Column(name = "name")
@@ -35,4 +36,6 @@ public class Employee implements Serializable {
 
     @Column(name = "del_flag")
     private Integer delFlag;
+
+    public Employee(){}
 }
