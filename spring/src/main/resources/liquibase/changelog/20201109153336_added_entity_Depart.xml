@@ -3,40 +3,17 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
-    <changeSet id="20200928163445" author="zml">
-        <createTable tableName="t_employee" remarks="员工表">
-            <column name="id" type="varchar(65)" remarks="员工工号">
+    <changeSet id="20201109153336" author="zml">
+        <createTable tableName="t_depart" remarks="部门表">
+            <column name="id" type="varchar(35)" remarks="主键">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
-
-            <column name="name" type="varchar(255)" remarks="员工姓名">
+            <column name="name" type="varchar(35)" remarks="部门名称">
                 <constraints nullable="true"/>
             </column>
-
-            <column name="age" type="integer" remarks="员工年龄">
-                <constraints nullable="true"/>
+            <column name="place" type="varchar(511)" remarks="部门区域">
+                <constraints nullable="false"/>
             </column>
-
-            <column name="sex" type="varchar(10)" remarks="员工性别">
-                <constraints nullable="true"/>
-            </column>
-
-            <column name="salary" type="Integer" remarks="员工薪资">
-                <constraints nullable="true"/>
-            </column>
-
-            <column name="depart_id" type="varchar(65)" remarks="部门编号">
-                <constraints nullable="true"/>
-            </column>
-
-            <column name="del_flag" type="integer" remarks="逻辑删除位">
-                <constraints nullable="true"/>
-            </column>
-
-        </createTable>
-    </changeSet>
-    <changeSet id="20201109154618" author="zml">
-        <addColumn tableName="t_employee">
             <column name="created_date" type="datetime" remarks="创建时间">
                 <constraints nullable="true"/>
             </column>
@@ -49,6 +26,9 @@
             <column name="last_modified_by" type="varchar(35)" remarks="最后一次修改人">
                 <constraints nullable="true"/>
             </column>
-        </addColumn>
+            <column name="del_flag" type="integer" remarks="逻辑删除标志位">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
     </changeSet>
 </databaseChangeLog>

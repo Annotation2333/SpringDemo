@@ -12,5 +12,5 @@
     <property name="floatType" value="float" dbms="mysql, oracle, mssql, mariadb"/>
 
     <include file="liquibase/changelog/20200928163445_added_entity_Employee.xml" relativeToChangelogFile="false"/>
-
+    <include file="liquibase/changelog/20201109153336_added_entity_Depart.xml" relativeToChangelogFile="false"/>
 </databaseChangeLog>

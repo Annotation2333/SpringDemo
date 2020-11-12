@@ -35,6 +35,11 @@ public class EmployeeResource {
         return ResponseEntity.ok().body(result);
     }
 
+    @ApiOperation(value = "更新员工接口", notes = "返回员工实体")
+    @PostMapping("/update")
+    public ResponseEntity<?> updateEmployee(){
+        return null;
+    }
 }
 
 
